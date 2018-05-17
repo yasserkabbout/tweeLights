@@ -2,7 +2,12 @@
 import tweepy, codecs, os, sys
 from aylienapiclient import textapi
 
-
+tweetsList=[]
+green= []
+yellow=[]
+red=[]
+winner=""
+#Authentication data and Setup
 def setupTwitterAuth(file):
 	global authentication_data
 	if not os.path.isfile("config.txt"):
@@ -11,6 +16,7 @@ def setupTwitterAuth(file):
 	try:
 		file=codecs.open("config.txt", "r", "utf-8")
 		authentication_data= file.readlines();
+
 
 		if authentication_data[0].__contains__("consumer_key"):
 			authentication_data[0]= authentication_data[0].lstrip("consumer_key:")
@@ -43,10 +49,10 @@ def setupTwitterAuth(file):
 	except ValueError:
 		print("The data is not formatted as required whithin your config.txt file. Please reformat it by referring to the user manual!")
 
-
+#Calling the Authentication Setup Function to Authorize the Twitter Login
 setupTwitterAuth("config.txt")
 
-## fill in your Twitter credentials
+## filling the Twitter account credentials
 consumer_key = authentication_data[0]
 consumer_secret = authentication_data[1]
 access_token = authentication_data[2]
@@ -58,13 +64,56 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
-## fill in your search query and store your results in a variable
-results = api.search(q = "@tweeLightsSWE", lang = "en", result_type = "recent", count = 10000)
+
+#while True:
+    ## filling in the search query and store your tweets in a variable
+tweets = api.search(q = "green", lang = "en", result_type = "recent")
+
+
+#Adding the tweets to a list called tweetsList
+for results in tweets:
+    tweetsList.append(results.text)
+
+
+#Checking the color mentioned within the tweets and increasing the colors' votes accordingly
+#for tweet in tweetsList:
+ #   if tweet.__contains__("green"):
+  #          green.append(tweet)
+   # if tweet.__contains__("yellow"):
+    #        yellow.append(tweet)
+    #if tweet.__contains__("red"):
+     #       red.append(tweet)
+
+
+#Printing all the tweets from tweetsList
+for result in tweetsList:
+    print(result)
+
+
+#For testing purposes: Checking the total tweets size and the ones having the green color
+print(len(green))
+print(len(yellow))
+print(len(red))
+
+
+
+
+if (len(red)>len(yellow)) and (len(red)>len(green)):
+    winner="red"
+elif (len(yellow)>len(green)) and (len(yellow)>len(red)):
+    winner="yellow"
+elif (len(green)>len(yellow)) and (len(green)>len(red)):
+    winner="green"
+else:
+    print("No winner! Please revote or take the action by yourself")
+
+
+print(winner)
 
 
 ## use the codecs library to write the text of the Tweets to a .txt file
 file = codecs.open("yasser.txt", "w", "utf-8")
-for result in results:
-	file.write("\n"  +  "\n" + result.text + "\n")
-	file.write("\n"+  "+++++++++++++++++++++++++++++++++++\n")
+for result in tweets:
+	file.write(result.text + "\n")
+
 file.close()
