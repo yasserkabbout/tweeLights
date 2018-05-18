@@ -1,6 +1,18 @@
 ## import the libraries
 import tweepy, codecs, os, sys
-from aylienapiclient import textapi
+import RPi.GPIO as GPIO
+import time
+
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+#Yellow
+GPIO.setup(14,GPIO.OUT)
+#Green
+GPIO.setup(15,GPIO.OUT)
+#Red
+GPIO.setup(18,GPIO.OUT)
+
 
 tweetsList=[]
 green= []
@@ -21,28 +33,28 @@ def setupTwitterAuth(file):
 		if authentication_data[0].__contains__("consumer_key"):
 			authentication_data[0]= authentication_data[0].lstrip("consumer_key:")
 			authentication_data[0]=authentication_data[0].strip()
-			print(authentication_data[0])
+			#print(authentication_data[0])
 		else:
 			raise (ValueError)
 
 		if authentication_data[1].__contains__("consumer_secret:"):
 			authentication_data[1]=authentication_data[1].lstrip("consumer_secret:")
 			authentication_data[1]=authentication_data[1].strip()
-			print(authentication_data[1])
+			#print(authentication_data[1])
 		else:
 			raise (ValueError)
 
 		if authentication_data[2].__contains__("access_token:"):
 			authentication_data[2]=authentication_data[2].lstrip("access_token:")
 			authentication_data[2]=authentication_data[2].strip()
-			print(authentication_data[2])
+			#print(authentication_data[2])
 		else:
 			raise (ValueError)
 
 		if authentication_data[3].__contains__("access_token_secret:"):
 			authentication_data[3]=authentication_data[3].lstrip("access_token_secret:")
 			authentication_data[3]=authentication_data[3].strip()
-			print(authentication_data[3])
+			#print(authentication_data[3])
 		else:
 			raise(ValueError)
 
@@ -67,7 +79,7 @@ api = tweepy.API(auth)
 
 #while True:
     ## filling in the search query and store your tweets in a variable
-tweets = api.search(q = "green", lang = "en", result_type = "recent")
+tweets = api.search(q = "@tweeLightsSWE_S", lang = "en", result_type = "recent")
 
 
 #Adding the tweets to a list called tweetsList
@@ -76,13 +88,14 @@ for results in tweets:
 
 
 #Checking the color mentioned within the tweets and increasing the colors' votes accordingly
-#for tweet in tweetsList:
- #   if tweet.__contains__("green"):
-  #          green.append(tweet)
-   # if tweet.__contains__("yellow"):
-    #        yellow.append(tweet)
-    #if tweet.__contains__("red"):
-     #       red.append(tweet)
+for tweet in tweetsList:
+    tweet=tweet.upper()
+    if tweet.__contains__("GREEN"):
+            green.append(tweet)
+    if tweet.__contains__("YELLOW"):
+            yellow.append(tweet)
+    if tweet.__contains__("RED"):
+            red.append(tweet)
 
 
 #Printing all the tweets from tweetsList
@@ -94,16 +107,21 @@ for result in tweetsList:
 print(len(green))
 print(len(yellow))
 print(len(red))
-
+GPIO.output(18,GPIO.LOW)
+GPIO.output(15,GPIO.LOW)
+GPIO.output(14, GPIO.LOW)
 
 
 
 if (len(red)>len(yellow)) and (len(red)>len(green)):
     winner="red"
+    GPIO.output(18,GPIO.HIGH)
 elif (len(yellow)>len(green)) and (len(yellow)>len(red)):
     winner="yellow"
+    GPIO.output(14, GPIO.HIGH)
 elif (len(green)>len(yellow)) and (len(green)>len(red)):
     winner="green"
+    GPIO.output(15,GPIO.HIGH)
 else:
     print("No winner! Please revote or take the action by yourself")
 
