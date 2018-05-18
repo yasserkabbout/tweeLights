@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<link rel="icon" type="image/png" href="../../../Desktop/New%20folder/x_fresh_bootstrap_table_v1.1/assets/img/favicon.ico">
+	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	
-	<title>tweeLights Stores Overview</title>
+	<title>tweeLights Contest Overview!</title>
 
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
     
-    <link href="../../../Desktop/New%20folder/x_fresh_bootstrap_table_v1.1/assets/css/bootstrap.css" rel="stylesheet" />
-    <link href="../../../Desktop/New%20folder/x_fresh_bootstrap_table_v1.1/assets/css/fresh-bootstrap-table.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/fresh-bootstrap-table.css" rel="stylesheet" />
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -35,8 +35,8 @@
             	<th data-field="name" data-sortable="true">Name</th>
             	<th data-field="salary" data-sortable="true">Country</th>
             	<th data-field="country" data-sortable="true">City</th>
-            	<th data-field="city">Preferred Color</th>
-            	<th data-field="actions" data-formatter="operateFormatter" data-events="operateEvents"></th>
+            	<th data-field="city">Winner Color</th>
+            	<th data-field="actions" data-formatter="operateFormatter" data-events="operateEvents">Share</th>
             </thead>
             <tbody>
                 <tr>
@@ -55,7 +55,30 @@
                 	<td>Sinaai-Waas</td>
                 	<td></td>
                 </tr>
-                
+                <tr>
+                	<td>3</td>
+                	<td>Sage Rodriguez</td>
+                	<td>$56,142</td>
+                	<td>Netherlands</td>
+                	<td>Baileux</td>
+                	<td></td>
+                </tr>
+                <tr>
+                	<td>4</td>
+                	<td>Philip Chaney</td>
+                	<td>$38,735</td>
+                	<td>Korea, South</td>
+                	<td>Overland Park</td>
+                	<td></td>
+                </tr>
+                <tr>
+                	<td>5</td>
+                	<td>Doris Greene</td>
+                	<td>$63,542</td>
+                	<td>Malawi</td>
+                	<td>Feldkirchen in Kärnten</td>
+                	<td></td>
+                </tr>
             </tbody>
         </table>
     </div>
@@ -64,9 +87,9 @@
 
 
 </body>
-    <script type="text/javascript" src="../../../Desktop/New%20folder/x_fresh_bootstrap_table_v1.1/assets/js/jquery-1.11.2.min.js"></script>
-    <script type="text/javascript" src="../../../Desktop/New%20folder/x_fresh_bootstrap_table_v1.1/assets/js/bootstrap.js"></script>
-    <script type="text/javascript" src="../../../Desktop/New%20folder/x_fresh_bootstrap_table_v1.1/assets/js/bootstrap-table.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap-table.js"></script>
         
     <script type="text/javascript">
         var $table = $('#fresh-table'),
@@ -83,7 +106,7 @@
             $table.bootstrapTable({
                 toolbar: ".toolbar",
 
-                showRefresh: true,
+                showRefresh: false,
                 search: true,
                 showToggle: true,
                 showColumns: true,
@@ -128,7 +151,7 @@
             };
             
             $alertBtn.click(function () {
-                alert("You pressed on Alert");
+                alert("This tweeLights! a Project for SWE573 at Bogazici University. It is the first working prototype and be considered as version 1.0");
             });
         
             
