@@ -43,7 +43,7 @@ access_token_secret: [your access token secret]
 
 ### 🚀Raspberry Pi and LED connections
 
-![](https://github.com/yasserkabbout/tweeLights/blob/master/gpio-numbers-pi2.png?raw=true)
+![](https://github.com/yasserkabbout/tweeLights/blob/master/images/gpio-numbers-pi2.png?raw=true)
 
 The pins used in this project are the Ground pin, GPIO 14, GPIO 15, and GPIO 18.
 
