@@ -2,6 +2,8 @@
 import tweepy, codecs, os, sys
 #import RPi.GPIO as GPIO
 import time
+import subprocess
+import urllib.request
 
 
 #GPIO.setmode(GPIO.BCM)
@@ -21,45 +23,45 @@ red=[]
 winner=""
 #Authentication data and Setup
 def setupTwitterAuth(file):
-	global authentication_data
-	if not os.path.isfile("config.txt"):
-		print("File path {} does not exist. Exiting...".format("config.txt"))
-		sys.exit()
-	try:
-		file=codecs.open("config.txt", "r", "utf-8")
-		authentication_data= file.readlines();
+    global authentication_data
+    if not os.path.isfile("config.txt"):
+        print("File path {} does not exist. Exiting...".format("config.txt"))
+        sys.exit()
+    try:
+        file=codecs.open("config.txt", "r", "utf-8")
+        authentication_data= file.readlines();
 
 
-		if authentication_data[0].__contains__("consumer_key"):
-			authentication_data[0]= authentication_data[0].lstrip("consumer_key:")
-			authentication_data[0]=authentication_data[0].strip()
-			#print(authentication_data[0])
-		else:
-			raise (ValueError)
+        if authentication_data[0].__contains__("consumer_key"):
+            authentication_data[0]= authentication_data[0].lstrip("consumer_key:")
+            authentication_data[0]=authentication_data[0].strip()
+            #print(authentication_data[0])
+        else:
+            raise (ValueError)
 
-		if authentication_data[1].__contains__("consumer_secret:"):
-			authentication_data[1]=authentication_data[1].lstrip("consumer_secret:")
-			authentication_data[1]=authentication_data[1].strip()
-			#print(authentication_data[1])
-		else:
-			raise (ValueError)
+        if authentication_data[1].__contains__("consumer_secret:"):
+            authentication_data[1]=authentication_data[1].lstrip("consumer_secret:")
+            authentication_data[1]=authentication_data[1].strip()
+            #print(authentication_data[1])
+        else:
+            raise (ValueError)
 
-		if authentication_data[2].__contains__("access_token:"):
-			authentication_data[2]=authentication_data[2].lstrip("access_token:")
-			authentication_data[2]=authentication_data[2].strip()
-			#print(authentication_data[2])
-		else:
-			raise (ValueError)
+        if authentication_data[2].__contains__("access_token:"):
+            authentication_data[2]=authentication_data[2].lstrip("access_token:")
+            authentication_data[2]=authentication_data[2].strip()
+            #print(authentication_data[2])
+        else:
+            raise (ValueError)
 
-		if authentication_data[3].__contains__("access_token_secret:"):
-			authentication_data[3]=authentication_data[3].lstrip("access_token_secret:")
-			authentication_data[3]=authentication_data[3].strip()
-			#print(authentication_data[3])
-		else:
-			raise(ValueError)
+        if authentication_data[3].__contains__("access_token_secret:"):
+            authentication_data[3]=authentication_data[3].lstrip("access_token_secret:")
+            authentication_data[3]=authentication_data[3].strip()
+            #print(authentication_data[3])
+        else:
+            raise(ValueError)
 
-	except ValueError:
-		print("The data is not formatted as required whithin your config.txt file. Please reformat it by referring to the user manual!")
+    except ValueError:
+        print("The data is not formatted as required whithin your config.txt file. Please reformat it by referring to the user manual!")
 
 #Calling the Authentication Setup Function to Authorize the Twitter Login
 setupTwitterAuth("config.txt")
@@ -115,12 +117,18 @@ print(len(red))
 
 if (len(red)>len(yellow)) and (len(red)>len(green)):
     winner="red"
+    with urllib.request.urlopen('http://tweelights.yasserkabbout.com/assets/api/insertRed.php') as response:
+        html = response.read()
     #GPIO.output(18,GPIO.HIGH)
 elif (len(yellow)>len(green)) and (len(yellow)>len(red)):
     winner="yellow"
+    with urllib.request.urlopen('http://tweelights.yasserkabbout.com/assets/api/insertYellow.php') as response:
+        html = response.read()
     #GPIO.output(14, GPIO.HIGH)
 elif (len(green)>len(yellow)) and (len(green)>len(red)):
     winner="green"
+    with urllib.request.urlopen('http://tweelights.yasserkabbout.com/assets/api/insertGreen.php') as response:
+        html = response.read()
     #GPIO.output(15,GPIO.HIGH)
 else:
     print("No winner! Please revote or take the action by yourself")
@@ -132,6 +140,6 @@ print(winner)
 ## use the codecs library to write the text of the Tweets to a .txt file
 file = codecs.open("yasser.txt", "w", "utf-8")
 for result in tweets:
-	file.write(result.text + "\n")
+    file.write(result.text + "\n")
 
 file.close()
