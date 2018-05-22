@@ -6,14 +6,14 @@ import subprocess
 import urllib.request
 
 
-#GPIO.setmode(GPIO.BCM)
-#GPIO.setwarnings(False)
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
 #Yellow
-#GPIO.setup(14,GPIO.OUT)
+GPIO.setup(14,GPIO.OUT)
 #Green
-#GPIO.setup(15,GPIO.OUT)
+GPIO.setup(15,GPIO.OUT)
 #Red
-#GPIO.setup(18,GPIO.OUT)
+GPIO.setup(18,GPIO.OUT)
 
 
 tweetsList=[]
@@ -120,19 +120,19 @@ if (len(red)>len(yellow)) and (len(red)>len(green)):
     # calling the API to insert the the RED color as a Database Record
     with urllib.request.urlopen('http://tweelights.yasserkabbout.com/assets/api/insertRed.php') as response:
         html = response.read()
-    #GPIO.output(18,GPIO.HIGH)
+    GPIO.output(18,GPIO.HIGH)
 elif (len(yellow)>len(green)) and (len(yellow)>len(red)):
     winner="yellow"
     # calling the API to insert the the YELLOW color as a Database Record
     with urllib.request.urlopen('http://tweelights.yasserkabbout.com/assets/api/insertYellow.php') as response:
         html = response.read()
-    #GPIO.output(14, GPIO.HIGH)
+    GPIO.output(14, GPIO.HIGH)
 elif (len(green)>len(yellow)) and (len(green)>len(red)):
     winner="green"
     #calling the API to insert the the GREEN color as a Database Record
     with urllib.request.urlopen('http://tweelights.yasserkabbout.com/assets/api/insertGreen.php') as response:
         html = response.read()
-    #GPIO.output(15,GPIO.HIGH)
+    GPIO.output(15,GPIO.HIGH)
 else:
     print("No winner! Please revote or take the action by yourself")
 
