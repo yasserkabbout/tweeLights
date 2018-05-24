@@ -1,4 +1,4 @@
-# :grinning: Welcome to tweeLights!
+Welcome to tweeLights!
 
 Each year, in living rooms and home-goods stores across the country the same battle unfolds: White or multi-colored lights? The battles are contentious with husbands and wives, neighbors and colleagues pitted against each other and searching for compromise.
 
@@ -8,7 +8,7 @@ In order to solve this issue, and to have some fun, we decided to implement a sy
 
 ## Installation
 
-### :wrench: What will you need?
+###  What will you need?
 - Raspberry pi 3 or 2
 - Bread Board
 - Jumper Cables
@@ -17,7 +17,7 @@ In order to solve this issue, and to have some fun, we decided to implement a sy
 
 
 
-### :dizzy_face: How to configure it?
+###  How to configure it?
 First, before we continue, you should have Raspberry Pi 3 Model B/B+ or a Raspberry Pi 2.
 
 1. Get a micro SD card of at least 8GB.
@@ -41,7 +41,7 @@ access_token_secret: [your access token secret]
 1. Run the Python script `python tweeLights.py` after having the LEDs connected as mentioned the section below.
 1. The system will be working now
 
-### 🚀Raspberry Pi and LED connections
+### Raspberry Pi and LED connections
 
 ![](https://github.com/yasserkabbout/tweeLights/blob/master/images/gpio-numbers-pi2.png?raw=true)
 
@@ -53,41 +53,41 @@ The pins used in this project are the Ground pin, GPIO 14, GPIO 15, and GPIO 18.
 - The anode part of the LED will be connected to the ground pin.
 
 
-## :mortar_board: Read More!
+##  Read More!
 
-:question: **[1. Project Description](https://github.com/yasserkabbout/tweeLights/wiki/1.-Project-Description)**
+ **[1. Project Description](https://github.com/yasserkabbout/tweeLights/wiki/1.-Project-Description)**
 
-:bar_chart: **[2. Project Requirements](https://github.com/yasserkabbout/tweeLights/wiki/2.-Project-Requirements-RSD)**
+ **[2. Project Requirements](https://github.com/yasserkabbout/tweeLights/wiki/2.-Project-Requirements-RSD)**
 
-:art: **[3. System Design](https://github.com/yasserkabbout/tweeLights/wiki/3.-System-Design-Sketches)**
+ **[3. System Design](https://github.com/yasserkabbout/tweeLights/wiki/3.-System-Design-Sketches)**
 
-:dart: **[4. Project Plan](https://github.com/yasserkabbout/tweeLights/wiki/4.-Project-Plan)**
+ **[4. Project Plan](https://github.com/yasserkabbout/tweeLights/wiki/4.-Project-Plan)**
 
-:moneybag: **[5. Project Market Analysis](https://github.com/yasserkabbout/tweeLights/wiki/5.-Project-Market-Analysis)**
+: **[5. Project Market Analysis](https://github.com/yasserkabbout/tweeLights/wiki/5.-Project-Market-Analysis)**
 
-:rocket: **[6. Project Complexity Analysis](https://github.com/yasserkabbout/tweeLights/wiki/6.-Project-Complexity-Analysis)**
+ **[6. Project Complexity Analysis](https://github.com/yasserkabbout/tweeLights/wiki/6.-Project-Complexity-Analysis)**
 
-:surfer: **[7. Team SWOT Analysis](https://github.com/yasserkabbout/tweeLights/wiki/7.-Project's-Team-SWOT-Analysis)**
+ **[7. Team SWOT Analysis](https://github.com/yasserkabbout/tweeLights/wiki/7.-Project's-Team-SWOT-Analysis)**
 
- 📑 **[ 8. Git Cheat Sheet](https://github.com/yasserkabbout/tweeLights/blob/master/images/github-git-cheat-sheet.pdf)**
+  **[ 8. Git Cheat Sheet](https://github.com/yasserkabbout/tweeLights/blob/master/images/github-git-cheat-sheet.pdf)**
 
-:computer: **[We are live! Click here](http://tweelights.yasserkabbout.com/)**
+ **[We are live! Click here](http://tweelights.yasserkabbout.com/)**
 
 
 
-## :bulb: Help us improve!
+## Help us improve!
 
 1. A template is provided if you would like to submit a Feature Request issue.  **[Feature Request](https://github.com/yasserkabbout/tweeLights/issues/new?template=bug_report.md)**
 2. A template is provided if you would like to submit a Bug Report issue. **[Bug Report](https://github.com/yasserkabbout/tweeLights/issues/new?template=feature_request.md)**
 
 
-## :round_pushpin: Releases
+##  Releases
 **[You can reach the first working prototype (v1.0) by clicking here](https://github.com/yasserkabbout/tweeLights/releases/tag/v1.0)**
 
 
 
 
-## :ok_hand: Contributing
+##  Contributing
 
 1. Fork it!
 2. Create your feature branch: `git checkout -b my-new-feature`
@@ -96,10 +96,10 @@ The pins used in this project are the Ground pin, GPIO 14, GPIO 15, and GPIO 18.
 5. Submit a pull request :D
 
 
-## :hearts: Credits
+##  Credits
 
 Credit goes to **[Yasser El Kabbout](https://www.linkedin.com/in/yasserkabbout/)** & **[Professor Dr. Suzan Üsküdarlı](https://www.linkedin.com/in/suzanuskudarli/)** from Bogaziçi University.
 
-## :innocent: License
+##  License
 
 Nah! Don't worry about this :D feel free to use and edit the software.
