@@ -81,6 +81,10 @@ The pins used in this project are the Ground pin, GPIO 14, GPIO 15, and GPIO 18.
 2. A template is provided if you would like to submit a Bug Report issue. **[Bug Report](https://github.com/yasserkabbout/tweeLights/issues/new?template=feature_request.md)**
 
 
+## :round_pushpin: Releases
+**[You can reach the first working prototype (v1.0) by clicking here](https://github.com/yasserkabbout/tweeLights/releases/tag/v1.0)**
+
+
 
 ## :ok_hand: Contributing
 
