@@ -43,7 +43,7 @@ access_token_secret: [your access token secret]
 
 ### 🚀Raspberry Pi and LED connections
 
-![](https://github.com/yasserkabbout/tweeLights/blob/master/gpio-numbers-pi2.png?raw=true)
+![](https://github.com/yasserkabbout/tweeLights/blob/master/images/gpio-numbers-pi2.png?raw=true)
 
 The pins used in this project are the Ground pin, GPIO 14, GPIO 15, and GPIO 18.
 
@@ -69,7 +69,21 @@ The pins used in this project are the Ground pin, GPIO 14, GPIO 15, and GPIO 18.
 
 :surfer: **[7. Team SWOT Analysis](https://github.com/yasserkabbout/tweeLights/wiki/7.-Project's-Team-SWOT-Analysis)**
 
+ 📑 **[ 8. Git Cheat Sheet](https://github.com/yasserkabbout/tweeLights/blob/master/images/github-git-cheat-sheet.pdf)**
+
 :computer: **[We are live! Click here](http://tweelights.yasserkabbout.com/)**
+
+
+
+## :bulb: Help us improve!
+
+1. A template is provided if you would like to submit a Feature Request issue.  **[Feature Request](https://github.com/yasserkabbout/tweeLights/issues/new?template=bug_report.md)**
+2. A template is provided if you would like to submit a Bug Report issue. **[Bug Report](https://github.com/yasserkabbout/tweeLights/issues/new?template=feature_request.md)**
+
+
+## :round_pushpin: Releases
+**[You can reach the first working prototype (v1.0) by clicking here](https://github.com/yasserkabbout/tweeLights/releases/tag/v1.0)**
+
 
 
 
@@ -84,7 +98,7 @@ The pins used in this project are the Ground pin, GPIO 14, GPIO 15, and GPIO 18.
 
 ## :hearts: Credits
 
-Credit goes to Yasser El Kabbout & Professor Dr. Suzan Üsküdarlı from Bogaziçi University.
+Credit goes to **[Yasser El Kabbout](https://www.linkedin.com/in/yasserkabbout/)** & **[Professor Dr. Suzan Üsküdarlı](https://www.linkedin.com/in/suzanuskudarli/)** from Bogaziçi University.
 
 ## :innocent: License
 
