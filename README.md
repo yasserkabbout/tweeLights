@@ -75,6 +75,12 @@ The pins used in this project are the Ground pin, GPIO 14, GPIO 15, and GPIO 18.
 
 
 
+## :bulb: Help us improve!
+
+1. A template is provided if you would like to submit a Feature Request issue.
+2. A template is provided if you would like to submit a Bug Report issue.
+
+
 
 ## :ok_hand: Contributing
 
