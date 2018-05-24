@@ -69,9 +69,11 @@ The pins used in this project are the Ground pin, GPIO 14, GPIO 15, and GPIO 18.
 
 :surfer: **[7. Team SWOT Analysis](https://github.com/yasserkabbout/tweeLights/wiki/7.-Project's-Team-SWOT-Analysis)**
 
+ 📑 **[ 8. Git Cheat Sheet](https://github.com/yasserkabbout/tweeLights/blob/master/images/github-git-cheat-sheet.pdf)**
+
 :computer: **[We are live! Click here](http://tweelights.yasserkabbout.com/)**
 
- 📑 **[ 8. Git Cheat Sheet](https://github.com/yasserkabbout/tweeLights/blob/master/images/github-git-cheat-sheet.pdf)**
+
 
 
 ## :ok_hand: Contributing
