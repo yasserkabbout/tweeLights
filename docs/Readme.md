@@ -63,7 +63,7 @@ The pins used in this project are the Ground pin, GPIO 14, GPIO 15, and GPIO 18.
 
  **[4. Project Plan](https://github.com/yasserkabbout/tweeLights/wiki/4.-Project-Plan)**
 
-: **[5. Project Market Analysis](https://github.com/yasserkabbout/tweeLights/wiki/5.-Project-Market-Analysis)**
+ **[5. Project Market Analysis](https://github.com/yasserkabbout/tweeLights/wiki/5.-Project-Market-Analysis)**
 
  **[6. Project Complexity Analysis](https://github.com/yasserkabbout/tweeLights/wiki/6.-Project-Complexity-Analysis)**
 
