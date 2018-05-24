@@ -38,7 +38,7 @@ access_token_secret: [your access token secret]
 ```
 
 1. Install tweepy by `pip install tweepy`
-1. Run the Python script `python tweeLights.py` after having the LEDs connected as mentioned the section below.
+1. Run the Python script `python tweeLights.py` after having the LEDs connected as mentioned within the section below.
 1. The system will be working now
 
 ### 🚀Raspberry Pi and LED connections
