@@ -86,6 +86,7 @@ The pins used in this project are the Ground pin, GPIO 14, GPIO 15, and GPIO 18.
 
 
 
+
 ## :ok_hand: Contributing
 
 1. Fork it!
@@ -97,7 +98,7 @@ The pins used in this project are the Ground pin, GPIO 14, GPIO 15, and GPIO 18.
 
 ## :hearts: Credits
 
-Credit goes to Yasser El Kabbout & Professor Dr. Suzan Üsküdarlı from Bogaziçi University.
+Credit goes to **[Yasser El Kabbout](https://www.linkedin.com/in/yasserkabbout/)** & **[Professor Dr. Suzan Üsküdarlı](https://www.linkedin.com/in/suzanuskudarli/)** from Bogaziçi University.
 
 ## :innocent: License
 
