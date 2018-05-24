@@ -1,4 +1,4 @@
-Welcome to tweeLights!
+# Welcome to tweeLights!
 
 Each year, in living rooms and home-goods stores across the country the same battle unfolds: White or multi-colored lights? The battles are contentious with husbands and wives, neighbors and colleagues pitted against each other and searching for compromise.
 
