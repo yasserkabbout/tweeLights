@@ -1,3 +1,5 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/85fc407dfe724619becfef3941a4d347)](https://www.codacy.com/app/yasserkabbout/tweeLights?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=yasserkabbout/tweeLights&amp;utm_campaign=Badge_Grade)
+
 # :grinning: Welcome to tweeLights!
 
 Each year, in living rooms and home-goods stores across the country the same battle unfolds: White or multi-colored lights? The battles are contentious with husbands and wives, neighbors and colleagues pitted against each other and searching for compromise.
