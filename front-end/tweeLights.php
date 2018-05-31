@@ -27,8 +27,10 @@
 
 
 
+
+
 <div class="wrapper">
-    <div class="fresh-table full-color-orange full-screen-table">
+    <div class="fresh-table full-color-azure full-screen-table">
     <!--    Available colors for the full background: full-color-blue, full-color-azure, full-color-green, full-color-red, full-color-orange                  
             Available colors only for the toolbar: toolbar-color-blue, toolbar-color-azure, toolbar-color-green, toolbar-color-red, toolbar-color-orange
     -->
@@ -53,6 +55,10 @@
                 	<td>America</td>
                 	<td>Ny</td>
                 	<td> 
+
+
+
+
 
 <?php
 $username = "yasser";
@@ -86,15 +92,271 @@ mysql_close($dbhandle);
                 	<td>eBay</td>
                 	<td>Australia</td>
                 	<td>Sydney</td>
-                	<td>Yellow</td>
+                	<td>YELLOW</td>
                 	<td></td>
                 </tr>
 
+<tr>
+                	<td>3</td>
+                	<td>Pending Store</td>
+                	<td>Turkey</td>
+                	<td>Istanbul</td>
+                	<td>Awaiting RaspberryPi installation</td>
+                	<td></td>
+                </tr>
+
+<tr>
+                	<td>4</td>
+                	<td>Pending Store</td>
+                	<td>Turkey</td>
+                	<td>Antalya</td>
+                	<td>Awaiting RaspberryPi installation</td>
+                	<td></td>
+                </tr>
+
+<tr>
+                	<td>5</td>
+                	<td>Pending Store</td>
+                	<td>Turkey</td>
+                	<td>Ankara</td>
+                	<td>Awaiting RaspberryPi installation</td>
+                	<td></td>
+                </tr>
+
+<tr>
+                	<td>6</td>
+                	<td>Pending Store</td>
+                	<td>Lebanon</td>
+                	<td>Beirut</td>
+                	<td>Awaiting RaspberryPi installation</td>
+                	<td></td>
+                </tr>
+
+<tr>
+                	<td>7</td>
+                	<td>Pending Store</td>
+                	<td>Lebanon</td>
+                	<td>Tripoli</td>
+                	<td>Awaiting RaspberryPi installation</td>
+                	<td></td>
+                </tr>
+
+
+<tr>
+                	<td>8</td>
+                	<td>Pending Store</td>
+                	<td>AU</td>
+                	<td>Melbourne</td>
+                	<td>Awaiting RaspberryPi installation</td>
+                	<td></td>
+                </tr>
+
+<tr>
+                	<td>9</td>
+                	<td>Pending Store</td>
+                	<td>Kuwait</td>
+                	<td>Kuwait City</td>
+                	<td>Awaiting RaspberryPi installation</td>
+                	<td></td>
+                </tr>
+
+
+
+
+
+
             </tbody>
+
+
         </table>
+
+
+
+
+
+
     </div>
+<div style="background-color: rgb(255, 255, 255);">
+<div style="width: 900px;
+    padding: 0px;
+background-color: rgb(255, 206, 147),
+   height:200px;
+    margin: 0 auto;">
+<canvas id="myChart" width="50" height="35"></canvas>
+</div>
+</div>
+
+<div style="
+    
+background: black;
+   height:40px;">
+<p style="text-align:center;color:white;padding:10px;margin:auto;">A Project Developed from Scratch by <a href="https://www.linkedin.com/in/yasserkabbout/">Yasser El Kabbout</a></p>
+
+</div>
+
     
 </div>
+
+<?php
+
+$username = "yasser";
+$password = "yasser";
+$hostname = "yasserkabboutcom.ipagemysql.com"; 
+$xAxisData= array();
+
+//connection to the database
+$dbhandle = mysql_connect($hostname, $username, $password) 
+  or die("Unable to connect to MySQL");
+$selected = mysql_select_db("twee_lights",$dbhandle) 
+  or die("Could not select examples");
+$result = mysql_query("SELECT winner_color, record_date FROM winners_colors WHERE store_id=1;");
+
+while($row=mysql_fetch_assoc($result)) 
+        {
+     
+           
+            array_push($xAxisData,$row);
+        }
+
+
+
+//mysql_close($dbhandle);
+
+
+
+
+?>
+
+
+
+
+
+<script type="text/javascript" src="assets/js/Chart.js"></script>
+
+
+
+
+<script>
+
+
+var xAxisData= <?php 
+
+
+
+
+
+echo json_encode($xAxisData); ?>;
+
+console.log(xAxisData);
+
+var xAxisDate=[];
+var yAxisColor=[];
+
+
+for (var i = 0; i < xAxisData.length; i++) {
+    
+    xAxisDate.push(xAxisData[i].record_date);
+    yAxisColor.push(xAxisData[i].winner_color);
+   
+}
+
+for(var i=0; i<yAxisColor.length; i++){
+
+if(yAxisColor[i]==="RED")
+yAxisColor[i]=1;
+
+if(yAxisColor[i]==="GREEN")
+yAxisColor[i]=2;
+
+
+if(yAxisColor[i]==="YELLOW")
+yAxisColor[i]=3;
+
+
+}
+
+for(var i=0; i<yAxisColor.length; i++){
+
+console.log(yAxisColor[i]);
+
+
+}
+
+
+
+var ctx = document.getElementById('myChart').getContext('2d'); 
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: xAxisDate,
+        datasets: [{
+            label: 'Color Id: 1-RED | 2-GREEN | 3-YELLOW',
+	    backgroundColor: 'rgb(48, 139, 233)',
+	    steppedLine: true,
+	    fill: false,
+	    
+         
+            borderColor: 'rgb(48, 139, 233)',
+            data: yAxisColor,
+        }]
+    },
+
+    // Configuration options go here
+    options: {
+
+	
+
+   responsive: true,
+            legend: {
+                display: true
+            },
+            title: {
+                display: true,
+                text: 'Color Variation over time for the Amazon Store'
+            },
+            animation: {
+                animateScale: true
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: false,
+			labelString: 'Color Id: 1->RED | 2->GREEN | 3->YELLOW',
+					
+                      
+                        stepSize: 1
+                    }
+                }]
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+});</script>
+
+
+
+
+
+
+
+
+
+
 
 
 </body> 
@@ -103,6 +365,8 @@ mysql_close($dbhandle);
     <script type="text/javascript" src="assets/js/jquery-1.11.2.min.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap-table.js"></script>
+
+
         
     <script type="text/javascript">
         var $table = $('#fresh-table'),
@@ -189,6 +453,27 @@ mysql_close($dbhandle);
         }
        
     </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
