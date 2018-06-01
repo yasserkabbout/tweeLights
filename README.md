@@ -84,7 +84,7 @@ The pins used in this project are the Ground pin, GPIO 14, GPIO 15, and GPIO 18.
 
 
 ## :round_pushpin: Releases
-**[You can reach the first working prototype (v1.0) by clicking here](https://github.com/yasserkabbout/tweeLights/releases/tag/v1.0)**
+**[You can reach the first and second working prototypes (v1.0 and v1.1) by clicking here](https://github.com/yasserkabbout/tweeLights/releases)**
 
 
 
